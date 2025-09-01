@@ -42,7 +42,7 @@
 .popup__title {
   margin-bottom: 54px;
 }
-.modal__button.modal__button_save {
+.popup__button.popup__button_save {
   background-color: #000;
   color: #fff;
   width: 100%;
@@ -51,7 +51,7 @@
   border: none;
   cursor: pointer;
 }
-.modal__button.modal__button_save:hover {
+.popup__button.popup__button_save:hover {
   opacity: 60%;
 }
 @media screen and (max-width: 768px) {
