@@ -1,0 +1,47 @@
+.popup {
+  visibility: hidden;
+  position: absolute;
+  background: #000000a8;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+.popup_visible {
+  visibility: visible;
+}
+.popup__close-button {
+  position: absolute;
+  right: -36px;
+  top: -38px;
+  background: none;
+  border: none;
+}
+.popup__container {
+  background: #fff;
+  padding: 30px;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popup__form input {
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 16px 0px;
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.popup__title {
+  margin-bottom: 54px;
+}
+.modal__button.modal__button_save {
+  width: 100%;
+  padding: 1em;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-top: 40px;
+}

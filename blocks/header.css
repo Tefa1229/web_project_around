@@ -1,0 +1,16 @@
+.header {
+  max-width: calc(100% - 400px);
+  margin: 45px auto 40px;
+  padding-bottom: 41px;
+  border-bottom: 1px solid #545454;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: calc(100% - 200px);
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    max-width: calc(100% - 40px);
+  }
+}
