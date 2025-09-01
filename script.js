@@ -6,8 +6,8 @@ const form = document.querySelector(".popup__form");
 const fName = document.querySelector(".profile__name");
 const aboutMe = document.querySelector(".profile__about");
 
-const inputName = document.querySelector(".fname");
-const inputaboutMe = document.querySelector(".aboutMe");
+const inputName = document.querySelector("#fname");
+const inputaboutMe = document.querySelector("#aboutMe");
 
 function toggleForm() {
   popup.classList.add("popup_visible");
@@ -19,12 +19,17 @@ function toggleForm() {
 }
 
 openFormButton.addEventListener("click", toggleForm);
-closeButton.addEventListener("click", toggleForm);
+closeButton.addEventListener("click", closepopup);
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
   fName.textContent = inputName.value;
   aboutMe.textContent = inputaboutMe.value;
+  closepopup();
 }
 
 form.addEventListener("submit", handleFormSubmit);
+
+function closepopup() {
+  popup.classList.remove("popup_visible");
+}
