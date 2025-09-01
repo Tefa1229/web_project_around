@@ -16,6 +16,10 @@
   top: -38px;
   background: none;
   border: none;
+  cursor: pointer;
+}
+.popup__close-button:hover {
+  opacity: 60%;
 }
 .popup__container {
   background: #fff;
@@ -39,9 +43,28 @@
   margin-bottom: 54px;
 }
 .modal__button.modal__button_save {
+  background-color: #000;
+  color: #fff;
   width: 100%;
   padding: 1em;
-  background-color: #fff;
-  border: 1px solid #ccc;
   margin-top: 40px;
+  border: none;
+  cursor: pointer;
+}
+.modal__button.modal__button_save:hover {
+  opacity: 60%;
+}
+@media screen and (max-width: 768px) {
+  .popup__container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .popup__container {
+    width: calc(100% - 40px);
+  }
+  .popup__close-button {
+    right: 0;
+    top: -48px;
+  }
 }
