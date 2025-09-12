@@ -48,134 +48,48 @@
           </button>
         </section>
         <section class="gallery">
-          <div class="gallery__card">
-            <img
-              class="gallery__image"
-              src="./images/yosemite.jpg"
-              alt="Yosemite Valley Park"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Valle de Yosemite</h2>
+          <div class="gallery__container">
+            <!-- Aquí van las tarjetas creadas dinámicamente -->
+          </div>
+          <template id="card-template">
+            <div class="gallery__card">
               <button
-                class="gallery__like-button"
+                class="gallery__delete-button"
                 type="button"
-                aria-label="Like"
+                aria-label="Delete"
               >
                 <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
+                  class="gallery__icon-delete"
+                  src="./images/delete.svg"
                   alt="Like heart icon"
                 />
               </button>
+              <img class="gallery__image" src="" alt="" />
+              <div class="gallery__description">
+                <h2 class="gallery__title"></h2>
+                <button
+                  class="gallery__like-button"
+                  type="button"
+                  aria-label="Like"
+                >
+                  <img
+                    class="gallery__icon-like"
+                    src="./images/like.svg"
+                    alt="Like heart icon"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__image"
-              src="./images/colorado.jpg"
-              alt="Colorado"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Colorado</h2>
-              <button
-                class="gallery__like-button"
-                type="button"
-                aria-label="Like"
-              >
-                <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
-                  alt="Like heart icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img class="gallery__image" src="./images/vail.jpg" alt="Vail" />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Vail</h2>
-              <button
-                class="gallery__like-button"
-                type="button"
-                aria-label="Like"
-              >
-                <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
-                  alt="Like heart icon"
-                />
-              </button>
-            </div>
-          </div>
-
-          <div class="gallery__card">
-            <img class="gallery__image" src="./images/utah.jpg" alt="Utah" />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Utah</h2>
-              <button
-                class="gallery__like-button"
-                type="button"
-                aria-label="Like"
-              >
-                <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
-                  alt="Like heart icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__image"
-              src="./images/grandCanyon.jpg"
-              alt="Grand Canyon"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Grand Canyon</h2>
-              <button
-                class="gallery__like-button"
-                type="button"
-                aria-label="Like"
-              >
-                <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
-                  alt="Like heart icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__image"
-              src="./images/millValley.jpg"
-              alt="Mill Valley"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Mill Valley</h2>
-              <button
-                class="gallery__like-button"
-                type="button"
-                aria-label="Like"
-              >
-                <img
-                  class="gallery__icon-like"
-                  src="./images/like.svg"
-                  alt="Like heart icon"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Tefa Vallejo</p>
       </footer>
       <!--modal-->
-      <section class="popup">
+      <section class="popup popup__profile">
         <div class="popup__container">
-          <button class="popup__close-button">
+          <button class="popup__profile_close-button popup__close-button">
             <img src="./images/closeIcon.svg" alt="" />
           </button>
           <h2 class="popup__title">Editar perfil</h2>
@@ -201,6 +115,38 @@
         </div>
       </section>
       <!--fin modal-->
+      <!--PopUp nueva tarjeta-->
+      <section class="popup popup__new-card">
+        <div class="popup__container">
+          <button class="popup__close-button popup__new-card__close-button">
+            <img src="./images/closeIcon.svg" alt="" />
+          </button>
+          <h2 class="popup__title">Nuevo lugar</h2>
+          <form class="popup__form" name="new-card">
+            <input type="text" id="title" name="title" placeholder="Título" />
+            <input
+              type="url"
+              id="imageLink"
+              name="imageLink"
+              placeholder="Enlace de la imagen"
+            />
+            <button class="popup__button popup__button_save" type="submit">
+              Crear
+            </button>
+          </form>
+        </div>
+      </section>
+      <!--fin del popUp-->
+      <!--PopUp imagen-->
+      <section class="popup popup__image">
+        <div class="popup__container_images">
+          <button class="popup__close-button">
+            <img src="./images/closeIcon.svg" alt="" />
+          </button>
+          <img class="popup__images" src="./images/colorado.jpg" alt="" />
+          <p class="caption">Colorado</p>
+        </div>
+      </section>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
