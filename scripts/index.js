@@ -5,10 +5,8 @@ const inputName = document.querySelector("#fname");
 const inputaboutMe = document.querySelector("#aboutMe");
 
 //popup
-const popup = document.querySelector(".popup");
-const closeButtonProfile = document.querySelector(
-  ".popup__profile_close-button"
-);
+const popupProfile = document.querySelector("#popup__profile");
+const closeButtonProfile = popupProfile.querySelector(".popup__close-button");
 const form = document.querySelector(".popup__form");
 
 //cards
@@ -43,10 +41,8 @@ const cardsContainer = document.querySelector(".gallery__container");
 
 //nuevas tarjetas
 const addButton = document.querySelector(".profile__add-button");
-const newCardPopup = document.querySelector(".popup__new-card");
-const closeButtonCard = document.querySelector(
-  ".popup__new-card__close-button"
-);
+const newCardPopup = document.querySelector("#popup__new-card");
+const closeButtonCard = newCardPopup.querySelector(".popup__close-button");
 const formNewCard = document.forms["new-card"];
 
 //Funciones editar
@@ -54,7 +50,7 @@ function openProfilePopup() {
   inputName.value = fName.textContent;
   inputaboutMe.value = aboutMe.textContent;
 
-  popup.classList.add("popup_visible");
+  popupProfile.classList.add("popup_visible");
 }
 
 openFormButton.addEventListener("click", openProfilePopup);
@@ -68,7 +64,7 @@ function handleFormSubmit(evt) {
 }
 
 function closeProfilePopup() {
-  popup.classList.remove("popup_visible");
+  popupProfile.classList.remove("popup_visible");
 }
 
 form.addEventListener("submit", handleFormSubmit);
@@ -124,8 +120,8 @@ function closeNewCardPopup() {
 closeButtonCard.addEventListener("click", closeNewCardPopup);
 
 //Popup Images
-const imagePopup = document.querySelector(".popup__image");
-const closeButtonImage = document.querySelector(".popup__image__close-button");
+const imagePopup = document.querySelector("#popup__image");
+const closeButtonImage = imagePopup.querySelector(".popup__close-button");
 
 //popup imagenes
 cardsContainer.addEventListener("click", function (evt) {
