@@ -54,7 +54,7 @@
 .popup__button.popup__button_save:hover {
   opacity: 60%;
 }
-.popup__container_images {
+.popup__container-images {
   position: absolute;
   top: 50%;
   left: 50%;
