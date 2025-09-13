@@ -63,12 +63,20 @@
 .popup__images {
   max-height: 75vh;
 }
+.popup__caption {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #fff;
+  margin-top: 10px;
+}
 @media screen and (max-width: 768px) {
   .popup__container {
     width: 60%;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 430px) {
   .popup__container {
     width: calc(100% - 40px);
   }

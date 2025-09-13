@@ -9,7 +9,7 @@
     max-width: calc(100% - 200px);
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 430px) {
   .header {
     max-width: calc(100% - 40px);
   }

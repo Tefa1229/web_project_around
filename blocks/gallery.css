@@ -33,6 +33,7 @@
   margin-left: auto;
   background-color: #fff;
   border: none;
+  cursor: pointer;
 }
 .gallery__like-button :hover {
   opacity: 60%;
@@ -47,8 +48,9 @@
   top: 10px;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
-.gallery__delete-button:active {
+.gallery__delete-button:hover {
   opacity: 60%;
 }
 @media screen and (max-width: 768px) {
@@ -57,7 +59,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 430px) {
   .gallery__container {
     max-width: calc(100% - 40px);
     grid-template-columns: repeat(1, 1fr);

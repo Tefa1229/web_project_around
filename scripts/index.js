@@ -122,3 +122,29 @@ function closeNewCardPopup() {
   newCardPopup.classList.remove("popup_visible");
 }
 closeButtonCard.addEventListener("click", closeNewCardPopup);
+
+//Popup Images
+const imagePopup = document.querySelector(".popup__image");
+const closeButtonImage = document.querySelector(".popup__image__close-button");
+
+//popup imagenes
+cardsContainer.addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("gallery__image")) {
+    imagePopup.classList.add("popup_visible");
+
+    const popupImage = imagePopup.querySelector(".popup__images");
+    const caption = imagePopup.querySelector(".popup__caption");
+
+    // Obtener el nombre desde el título de la tarjeta
+    const cardTitle = evt.target
+      .closest(".gallery__card")
+      .querySelector(".gallery__title");
+
+    popupImage.src = evt.target.src;
+    popupImage.alt = cardTitle.textContent;
+    caption.textContent = cardTitle.textContent; // ¡Aquí está la solución!
+  }
+});
+closeButtonImage.addEventListener("click", function () {
+  imagePopup.classList.remove("popup_visible");
+});
