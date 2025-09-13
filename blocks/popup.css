@@ -1,6 +1,6 @@
 .popup {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   background: #000000a8;
   width: 100%;
   top: 0;
@@ -61,6 +61,7 @@
   transform: translate(-50%, -50%);
 }
 .popup__images {
+  max-width: 75vw;
   max-height: 75vh;
 }
 .popup__caption {
