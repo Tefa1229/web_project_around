@@ -1,11 +1,26 @@
 # Tripleten web_project_around
 
-Esta página de Around US se ha desarrollado siguiendo los fundamentos de BEM en el HTML y se ha comenzado a implementar la parte de JavaScript utilizando el DOM.
-Se ha creado un pop-up y se han desarrollado eventos y funciones relacionadas con el formulario, como la apertura y cierre de la modal, así como la actualización de los datos del usuario.
+Este proyecto, Around US, fue desarrollado siguiendo los fundamentos de BEM en el HTML y utilizando JavaScript con el DOM para añadir interactividad y dinamismo a la página.
 
-Además, se han agregado nuevos modales con funcionalidades como añadir una nueva tarjeta y visualizar la imagen correspondiente a cada tarjeta del lugar.
+Gestión de perfil:
+Edición del nombre y la descripción del usuario.
+Validación en tiempo real de los campos del formulario.
+Mensajes de error personalizados.
 
-Por otro lado, se han implementado los botones de like y delete con sus funciones correspondientes en JavaScript. Todo esto se ha realizado utilizando arrays, para aportar dinamismo a las tarjetas con la ayuda de eventos y sus funciones.
+Gestión de tarjetas:
+Agregar nuevas tarjetas con imagen y título.
+Validación del formulario para nuevas tarjetas.
+Botón “like” para marcar tarjetas favoritas.
+Eliminar tarjetas del perfil.
+Visualización de imágenes en un popup.
 
-Puedes ver el resultado en la siguiente página de GitHub:
+Interacción con popups:
+Apertura y cierre de ventanas modales.
+Cierre mediante clic en el overlay.
+Cierre con la tecla Escape.
+Botones que se activan o desactivan según la validación del formulario.
+
+Todo esto se implementó con arrays, eventos y funciones en JavaScript, aportando dinamismo y una experiencia más fluida para el usuario.
+
+Puedes ver el resultado en GitHub Pages:
 https://tefa1229.github.io/web_project_around/
