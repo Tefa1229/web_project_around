@@ -1,3 +1,13 @@
+import { enableValidation, resetValidation } from "./validate.js";
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
 const openFormButton = document.querySelector(".profile__edit-button");
 const fName = document.querySelector(".profile__name");
 const aboutMe = document.querySelector(".profile__about");
@@ -65,6 +75,8 @@ function handleFormSubmit(evt) {
 
 function closeProfilePopup() {
   popupProfile.classList.remove("popup_visible");
+  // No necesitas form.reset() aquí porque los valores se cargan desde el perfil
+  resetValidation(form, validationConfig);
 }
 
 form.addEventListener("submit", handleFormSubmit);
@@ -116,6 +128,8 @@ formNewCard.addEventListener("submit", function (evt) {
 
 function closeNewCardPopup() {
   newCardPopup.classList.remove("popup_visible");
+  formNewCard.reset();
+  resetValidation(formNewCard, validationConfig);
 }
 closeButtonCard.addEventListener("click", closeNewCardPopup);
 
@@ -143,4 +157,29 @@ cardsContainer.addEventListener("click", function (evt) {
 });
 closeButtonImage.addEventListener("click", function () {
   imagePopup.classList.remove("popup_visible");
+});
+
+enableValidation(validationConfig);
+
+//close Escape
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openPopup = document.querySelector(".popup_visible");
+    const form = openPopup.querySelector("form");
+    openPopup.classList.remove("popup_visible");
+    if (form) {
+      resetValidation(form, validationConfig);
+    } else {
+      return;
+    }
+  }
+});
+
+//close overlay
+document.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup_visible")) {
+    evt.target.classList.remove("popup_visible");
+  }
+  // Reset validation para popups con formularios
+  resetValidation(form, validationConfig);
 });

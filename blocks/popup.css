@@ -32,7 +32,7 @@
 }
 .popup__form input {
   width: 100%;
-  margin-bottom: 24px;
+  margin-top: 24px;
   padding: 16px 0px;
   border-bottom: 1px solid #ccc;
   border-top: none;
@@ -40,7 +40,7 @@
   border-right: none;
 }
 .popup__title {
-  margin-bottom: 54px;
+  margin-bottom: 30px;
 }
 .popup__button.popup__button_save {
   background-color: #000;
@@ -72,6 +72,20 @@
   color: #fff;
   margin-top: 10px;
 }
+.popup__error_visible {
+  color: red;
+  font-size: 12px;
+}
+.popup__form input.popup__input_type_error {
+  border-bottom: 2px solid red;
+}
+button.popup__button.popup__button_save.popup__button_disabled {
+  background: none;
+  color: gray;
+  border: 1px solid;
+  cursor: default;
+}
+
 @media screen and (max-width: 768px) {
   .popup__container {
     width: 60%;
