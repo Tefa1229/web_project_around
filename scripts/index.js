@@ -75,7 +75,8 @@ function handleFormSubmit(evt) {
 
 function closeProfilePopup() {
   popupProfile.classList.remove("popup_visible");
-  // No necesitas form.reset() aquí porque los valores se cargan desde el perfil
+  inputName.value = fName.textContent;
+  inputaboutMe.value = aboutMe.textContent;
   resetValidation(form, validationConfig);
 }
 
@@ -107,7 +108,7 @@ cards.forEach((card) => {
   const cardElement = createCard(card);
   cardsContainer.prepend(cardElement);
 });
-//nueva tarjeta funcionalidad
+//new card functionality
 
 addButton.addEventListener("click", function () {
   newCardPopup.classList.add("popup_visible");
@@ -144,15 +145,13 @@ cardsContainer.addEventListener("click", function (evt) {
 
     const popupImage = imagePopup.querySelector(".popup__images");
     const caption = imagePopup.querySelector(".popup__caption");
-
-    // Obtener el nombre desde el título de la tarjeta
     const cardTitle = evt.target
       .closest(".gallery__card")
       .querySelector(".gallery__title");
 
     popupImage.src = evt.target.src;
     popupImage.alt = cardTitle.textContent;
-    caption.textContent = cardTitle.textContent; // ¡Aquí está la solución!
+    caption.textContent = cardTitle.textContent;
   }
 });
 closeButtonImage.addEventListener("click", function () {
@@ -165,12 +164,12 @@ enableValidation(validationConfig);
 document.addEventListener("keydown", (evt) => {
   if (evt.key === "Escape") {
     const openPopup = document.querySelector(".popup_visible");
-    const form = openPopup.querySelector("form");
-    openPopup.classList.remove("popup_visible");
-    if (form) {
-      resetValidation(form, validationConfig);
-    } else {
-      return;
+    if (openPopup === popupProfile) {
+      closeProfilePopup();
+    } else if (openPopup === newCardPopup) {
+      closeNewCardPopup();
+    } else if (openPopup === imagePopup) {
+      imagePopup.classList.remove("popup_visible");
     }
   }
 });
@@ -178,8 +177,12 @@ document.addEventListener("keydown", (evt) => {
 //close overlay
 document.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("popup_visible")) {
-    evt.target.classList.remove("popup_visible");
+    if (evt.target === popupProfile) {
+      closeProfilePopup();
+    } else if (evt.target === newCardPopup) {
+      closeNewCardPopup();
+    } else if (evt.target === imagePopup) {
+      evt.target.classList.remove("popup_visible");
+    }
   }
-  // Reset validation para popups con formularios
-  resetValidation(form, validationConfig);
 });
