@@ -1,4 +1,4 @@
-import Card from "./card.js";
+import Card from "./Card.js";
 import {
   initialCards,
   openModal,
@@ -6,7 +6,7 @@ import {
   closeModalOnEscape,
   closeModalOnOverlay,
 } from "./utils.js";
-import { enableValidation, resetValidation } from "./validate.js";
+import { enableValidation, resetValidation } from "./FormValidator.js";
 
 //calls to close modals with Escape and overlay
 document.addEventListener("keydown", closeModalOnEscape);
