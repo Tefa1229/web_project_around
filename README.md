@@ -20,6 +20,8 @@ Cierre mediante clic en el overlay.
 Cierre con la tecla Escape.
 Botones que se activan o desactivan según la validación del formulario.
 
+Ya teniendo como base lo anterior, lo que realizamos fue la implementación de POO, ajustando las clases para que fueran más dinámicas y simplificando el código para que pudiera refactorizarse utilizando métodos privados y públicos según se requiriera. Así que se reorganizó el código con las importaciones correspondientes y la funcionalidad completada.
+
 Todo esto se implementó con arrays, eventos y funciones en JavaScript, aportando dinamismo y una experiencia más fluida para el usuario.
 
 Puedes ver el resultado en GitHub Pages:
